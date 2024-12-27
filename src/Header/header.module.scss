@@ -1,0 +1,167 @@
+.header {
+    background-color: #313742;
+    width: 100%;
+    position: fixed;
+    z-index: 96;
+}
+:root {
+    --mau_chu: rgba(255, 255, 255, 0.437);
+    --mau_chu_hover: rgba(255, 255, 255, 0.714);
+}
+.right {
+    color: var(--mau_chu);
+    width: 250px;
+    & > * {
+        cursor: pointer;
+        margin-left: 20px;
+        font-size: 14px;
+    }
+    .login > *,
+    .register > * {
+        color: var(--mau_chu);
+        &:hover {
+            text-decoration: none;
+            color: var(--mau_chu_hover);
+        }
+    }
+    span {
+        margin-left: 5px;
+    }
+}
+
+.swicher {
+    & > * {
+        cursor: pointer;
+        color: var(--mau_chu);
+        margin-left: 40px;
+        text-decoration: none;
+        transition: border-bottom 0.3s ease;
+    }
+}
+.hover {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: transparent;
+    font-size: 17px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.5s;
+    &:after,
+    &:before {
+        content: ' ';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border: 0px solid #fff;
+        transition: all 0.4s;
+    }
+    &:after {
+        top: -1px;
+        left: -1px;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+    }
+    &:before {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 3px solid #fff;
+        border-right: 3px solid #fff;
+    }
+    &:hover {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        color: var(--mau_chu_hover);
+        border-radius: 5px;
+        &:before,
+        &:after {
+            width: 101%;
+            height: 101%;
+        }
+    }
+}
+.DienDan {
+    color: red;
+}
+.dong-background {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 97;
+    cursor: auto;
+}
+.effmo {
+    backdrop-filter: blur(10px);
+}
+.popupLogin {
+    cursor: auto;
+    position: absolute;
+    top: 95%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    z-index: 98;
+    width: 300px;
+    height: 300px;
+    background-color: #343a46;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: left;
+    animation: slideFromTop 0.2s ease-in-out forwards;
+}
+.popupRegister {
+    cursor: auto;
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 785px;
+    height: 421px;
+    background-color: #343a46;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: left;
+    animation: slideFromTop 0.2s ease-in-out forwards;
+}
+.avatar {
+    border-radius: 99px;
+}
+.popupProfile {
+    cursor: auto;
+    position: absolute;
+    top: 500%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    z-index: 98;
+    width: 70%;
+    height: 65vh;
+    background-color: #343a46;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: left;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    animation: fadeAndScaleIn 0.1s ease-in-out forwards;
+}
+@keyframes fadeAndScaleIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes slideFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
